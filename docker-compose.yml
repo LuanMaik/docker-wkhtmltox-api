@@ -6,7 +6,7 @@ services:
       build:
           context: .
           dockerfile: Dockerfile
-      container_name: wk-php
+      container_name: wkhtmltox-api
       working_dir: /
       ports:
         - "1111:80"
