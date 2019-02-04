@@ -30,6 +30,14 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use \App\Service\WkService;
 
 
+/**
+ * Validate the content type request
+ */
+if(!isset($_SERVER['CONTENT_TYPE']) || !in_array($_SERVER['CONTENT_TYPE'], ['application/json'])){
+    echo jsonResponse(['success' => false, 'message' => "It's necessary define the header request equals 'Content-Type: application/json'."], 400);
+    return;
+}
+
 # Get JSON as a string
 $json_str = file_get_contents('php://input');
 
