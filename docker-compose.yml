@@ -1,0 +1,14 @@
+version: "3.1"
+
+
+services:
+    wkhtmltox-api:
+      build:
+          context: .
+          dockerfile: Dockerfile
+      container_name: wk-php
+      working_dir: /
+      ports:
+        - "1111:80"
+      volumes:
+        - "./:/var/www/html"
